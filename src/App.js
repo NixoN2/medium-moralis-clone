@@ -6,11 +6,15 @@ import Sidebar from "./components/Sidebar";
 import HomeAuth from "./pages/HomeAuth";
 import Rightbar from "./components/Rightbar";
 import "./App.css";
+import { ConnectButton } from "web3uikit";
+import logo from "./images/medium.png";
+import { useMoralis } from "react-moralis";
 
 const App = () => {
-
+  const { isAuthenticated } = useMoralis();
   return (
     <>
+      {isAuthenticated ? (
         <div className="App">
           <div className="sideBar">
             <Sidebar />
@@ -27,6 +31,12 @@ const App = () => {
             <Rightbar />
           </div>
         </div>
+      ) : (
+        <div className="unAuth">
+          <img src={logo} alt="logo" height="200px" />
+          <ConnectButton />
+        </div>
+      )}
     </>
   );
 };

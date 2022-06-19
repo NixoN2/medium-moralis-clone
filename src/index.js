@@ -1,5 +1,5 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from "react";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { MoralisProvider } from "react-moralis";
@@ -9,13 +9,12 @@ const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Failed to find the root element");
 const root = createRoot(rootElement);
 
-
 root.render(
   <React.StrictMode>
     <MoralisProvider
       initializeOnMount
-      appId={"xxx"}
-      serverUrl={"xxx"}
+      appId={"NX1dTvzrHlslNETTpRmZ5HRuQ4NcODy6mMKdPlNy"}
+      serverUrl={"https://lzxwhibgwmpd.usemoralis.com:2053/server"}
     >
       <NotificationProvider>
         <Router>
@@ -25,5 +24,3 @@ root.render(
     </MoralisProvider>
   </React.StrictMode>
 );
-
-
